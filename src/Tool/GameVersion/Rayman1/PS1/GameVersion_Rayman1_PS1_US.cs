@@ -36,4 +36,9 @@ public class GameVersion_Rayman1_PS1_US : GameVersion_Rayman1_PS1
         [Rayman1Pointer.ymap] = 0x801f84c0,
         [Rayman1Pointer.mp] = 0x801f4430,
     }, Rayman1EngineVersion.R1_PS1) { }
+
+    protected override string EXEFileName => "SLUS-000.05";
+    protected override uint EXEFileTableLocalAddress => 0x000A0338;
+    protected override uint EXEFileTableMemoryAddress => 0x801C4B38;
+    protected override uint EXEFileTableLength => 9864;
 }
