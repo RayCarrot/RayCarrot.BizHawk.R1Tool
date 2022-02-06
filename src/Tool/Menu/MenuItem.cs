@@ -4,10 +4,10 @@ namespace RayCarrot.BizHawk.R1Tool;
 
 public class MenuItem
 {
-    public Func<string>? Title { get; set; }
+    public Func<string> Title { get; set; }
     public MenuItem[] Children { get; set; } = new MenuItem[0];
     public string[] Options { get; set; } = new string[0];
-    public Func<MenuItem, bool>? OnSelected { get; set; }
+    public Func<MenuItem, bool> OnSelected { get; set; }
 
     public int SelectedOption { get; set; }
     public string DisplayName => Title?.Invoke() ?? Options[SelectedOption];

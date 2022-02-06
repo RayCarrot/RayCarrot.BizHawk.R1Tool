@@ -40,9 +40,9 @@ public partial class MainForm : Form, IExternalToolForm, IBizHawkAPI
 
     #region Properties
 
-    public ToolManager? Manager { get; private set; }
+    public ToolManager Manager { get; private set; }
     public SupportedGameVersion[] SupportedVersions { get; }
-    public SupportedGameVersion? SelectedVersion { get; set; }
+    public SupportedGameVersion SelectedVersion { get; set; }
 
     #endregion
 

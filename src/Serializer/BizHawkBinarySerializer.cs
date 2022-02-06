@@ -12,7 +12,7 @@ public class BizHawkBinarySerializer : BinarySerializer
         CurrentAddressValue = 0x00;
     }
 
-    public override T Serialize<T>(T value, Action<T>? onPreSerializing = null, string? name = null)
+    public override T Serialize<T>(T value, Action<T> onPreSerializing = null, string name = null)
     {
         if (IsWriting)
             Write(value);
