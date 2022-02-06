@@ -1,11 +1,10 @@
-﻿namespace RayCarrot.BizHawk.R1Tool
+﻿namespace RayCarrot.BizHawk.R1Tool;
+
+public enum Platform
 {
-    public enum Platform
-    {
-        PS1,
-        Saturn,
-        GBA,
-        DSi,
-        DOS
-    }
+    PS1,
+    Saturn,
+    GBA,
+    DSi,
+    DOS
 }

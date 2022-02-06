@@ -1,7 +1,6 @@
-﻿namespace RayCarrot.BizHawk.R1Tool
+﻿namespace RayCarrot.BizHawk.R1Tool;
+
+public interface IBinarySerializable
 {
-    public interface IBinarySerializable
-    {
-        void Serialize(BinarySerializer s);
-    }
+    void Serialize(BinarySerializer s);
 }
