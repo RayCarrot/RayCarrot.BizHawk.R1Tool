@@ -104,6 +104,8 @@ public partial class MainForm : Form, IExternalToolForm, IBizHawkAPI
     public void Restart() => Init();
 
     public bool AskSaveChanges() => true;
+    public bool IsActive => true;
+    public bool IsLoaded => true;
 
     #endregion
 
@@ -115,7 +117,7 @@ public partial class MainForm : Form, IExternalToolForm, IBizHawkAPI
         Manager = null;
 
         var selectedVersion = SelectedVersion;
-        var gameTitle = GameInfo.GetRomName();
+        var gameTitle = GameInfo.GetGameInfo()?.Name;
 
         // If no version is selected we attempt to find the version from the game title
         if (selectedVersion == null)
