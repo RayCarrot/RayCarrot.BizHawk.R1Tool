@@ -206,7 +206,37 @@ public abstract class GameVersion_Rayman1 : IGameVersion
                 return false;
             }
         },
+        new MenuItem()
+        {
+            Title = () => "Set Powers",
+            Children = SubMenu_Cheats_Powers,
+        },
     };
+
+    public virtual MenuItem[] SubMenu_Cheats_Powers => new R1_RayEvtsFlags[]
+    {
+        R1_RayEvtsFlags.Fist,
+        R1_RayEvtsFlags.Hang,
+        R1_RayEvtsFlags.Helico,
+        R1_RayEvtsFlags.SuperHelico,
+        R1_RayEvtsFlags.Seed,
+        R1_RayEvtsFlags.Grab,
+        R1_RayEvtsFlags.Run,
+        R1_RayEvtsFlags.SquishedRayman,
+        R1_RayEvtsFlags.ForceRun,
+        R1_RayEvtsFlags.ReverseControls,
+    }.Select(x => new MenuItem()
+    {
+        Title = () => $"{(Data.RayEvts.HasFlag(x) ? "Disable" : "Enable")} {x}",
+        OnSelected = m =>
+        {
+            Data.RayEvts ^= x;
+            PendingEdits = true;
+
+            AddLogAction($"Toggled RayEvts {x}");
+            return false;
+        }
+    }).ToArray();
 
     public void Update(bool isActive)
     {
